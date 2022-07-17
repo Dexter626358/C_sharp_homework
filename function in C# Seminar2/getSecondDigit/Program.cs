@@ -4,8 +4,19 @@
 782 -> 8
 918 -> 1
 */
-Console.WriteLine("Введите число ");
+/*Console.WriteLine("Введите число ");
 int number = int.Parse(Console.ReadLine());
 int secondDigit = (number / 10) % 10;
 Console.WriteLine("Вторая цифра введенного числа равна " + secondDigit);
+*/
+void GetSecondNumber(int number)
+{
+    int secondDigit = (number / 10) % 10;
+    Console.WriteLine("Вторая цифра введенного числа равна " + secondDigit);
+    
+}
+GetSecondNumber(456);
+GetSecondNumber(782);
+GetSecondNumber(918);
+GetSecondNumber(324);
 
