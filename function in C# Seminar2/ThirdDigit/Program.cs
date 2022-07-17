@@ -39,14 +39,10 @@ string GetThirdNumber(int number)
         while (number1.Length > 3)
         {
             number1 = (int.Parse(number1) / 10) + "";
-
-
         }
-        
-        return int.Parse(number1) % 10 + ""; 
 
+        return int.Parse(number1) % 10 + "";
     }
-    
 }
 
 Console.WriteLine(GetThirdNumber(645));

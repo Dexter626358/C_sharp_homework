@@ -13,10 +13,8 @@ void GetSecondNumber(int number)
 {
     int secondDigit = (number / 10) % 10;
     Console.WriteLine("Вторая цифра введенного числа равна " + secondDigit);
-    
 }
 GetSecondNumber(456);
 GetSecondNumber(782);
 GetSecondNumber(918);
 GetSecondNumber(324);
-

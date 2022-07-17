@@ -1,4 +1,4 @@
-﻿/* 
+﻿/*
 Задача 15: Напишите программу, которая принимает на вход цифру,
  обозначающую день недели, и проверяет, является ли этот день выходным.
 
@@ -11,7 +11,7 @@ string CheckWeekend(int day)
 {
     if (day == 6 || day == 7)
     {
-        return "да"; 
+        return "да";
     }
     if (day == 1 || day == 2 || day == 3 || day == 4 || day == 5)
     {
@@ -21,7 +21,7 @@ string CheckWeekend(int day)
     {
         return "Такого дня не существует";
     }
-}    
+}
 
 Console.WriteLine(CheckWeekend(1));
 Console.WriteLine(CheckWeekend(2));
