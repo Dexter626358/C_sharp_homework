@@ -5,7 +5,7 @@
  int num = int.Parse(Console.ReadLine());
  bool flag = true;
  
- for (int i = 2; i < num; i++)
+ for (int i = 2; i <= num; i++)
  {
     int s=(int)Math.Sqrt(i);
     for (int j = 2; j <= s; j++)
