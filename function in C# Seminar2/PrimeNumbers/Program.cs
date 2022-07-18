@@ -4,11 +4,11 @@
  Console.WriteLine("Введите число: ");
  int num = int.Parse(Console.ReadLine());
  bool flag = true;
- int s=(int)Math.Sqrt(num);
+ 
  for (int i = 2; i < num; i++)
  {
-    
-    for (int j = 2; j < i; j++)
+    int s=(int)Math.Sqrt(i);
+    for (int j = 2; j <= s; j++)
     {
         if (i % j == 0)
         {
