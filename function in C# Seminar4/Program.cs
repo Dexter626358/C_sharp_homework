@@ -1,0 +1,17 @@
+﻿/* Задача 25: Напишите цикл, который принимает на вход два числа (A и B)
+ и возводит число A в натуральную степень B.
+
+3, 5 -> 243 (3⁵)
+
+2, 4 -> 16 */
+int getPower(int num1, int num2)
+{
+    int power = num1;
+    for (int i = 1; i < num2; i++)
+    {
+        power *= num1;
+    }
+    return power;
+}
+int result = getPower(3, 5);
+Console.WriteLine(result);
