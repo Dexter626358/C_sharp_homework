@@ -5,24 +5,46 @@ m = 3, n = 4.
 1 -3,3 8 -9,9
 8 7,8 -7,1 9 */
 Random rnd = new Random();
-int row = rnd.Next(5, 10);
-int col = rnd.Next(5, 10);
-int[,] array = new int[row, col];
-for (int i = 0; i < array.GetLength(0); i++)
+Double[,] array = GetArray();
+FillArray(array);
+PrintArray(array);
+
+Double[,] GetArray()  // получаем массив случайной размерности
 {
-    for(int j=0; j < array.GetLength(1); j++)
-    {
-           array[i,j] = rnd.Next(0, 100); 
-    }
     
+    int row = rnd.Next(1, 10);
+    int col = rnd.Next(1, 10);
+    Double[,] array = new Double[row, col];
+    return array;
 }
 
-for (int i = 0; i < array.GetLength(0); i++)
+Double[,] FillArray(Double[,] array) // заполняем массив случайными числами
 {
-    for(int j=0; j < array.GetLength(1); j++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        Console.Write(array[i,j] + "\t"); 
+        for(int j=0; j < array.GetLength(1); j++)
+        {
+            array[i,j] = Math.Round(rnd.NextDouble(), 3); 
+        }
+        
     }
-    Console.WriteLine();
+    return array; 
+        
     
+
+}
+
+
+void PrintArray(Double[,] array)  // выводим массив на печать
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for(int j=0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i,j] + "\t"); 
+        }
+        Console.WriteLine();
+        
+    }
+
 }
