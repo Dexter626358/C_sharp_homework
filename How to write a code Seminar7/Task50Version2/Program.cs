@@ -1,8 +1,8 @@
 ﻿int [,] array = {{1, 4, 7, 2}, {5, 9, 2, 3}, {8, 4, 2, 4}};
-string t = "";
-Console.WriteLine("Введите координаты точки (через пробел):");
-t = Console.ReadLine();
-string[] tv = t.Split(' ').Where(x=>x !="").ToArray();
+string coordinates = "";
+Console.WriteLine("Введите координаты элемента (через пробел):");
+coordinates = Console.ReadLine();
+string[] tv = coordinates.Split(' ').Where(x=>x !="").ToArray();
 int row = int.Parse(tv[0]);
 int col = int.Parse(tv[1]);
 bool flag = false;
