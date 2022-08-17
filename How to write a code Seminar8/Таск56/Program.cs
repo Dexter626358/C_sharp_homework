@@ -12,34 +12,42 @@
 и выдаёт номер строки с наименьшей суммой элементов: 1 строка*/
 int[,] array2D = {{1, 4, 7, 2}, {5, 9, 2, 3}, {8, 4, 2, 4}, {5, 2, 6, 7}};
 
-int[] rowSum = new int[array2D.GetLength(0)];
-int sumInRow = 0; 
+int line = getMinSum(getSuminRows(array2D)) + 1;
+Console.WriteLine("Наименьшая сумма элементов находится в строке номер " + line);
 
-for(int i = 0; i < array2D.GetLength(0); i++)
+int[] getSuminRows(int[,] array2D)
 {
-    for(int j = 0; j < array2D.GetLength(1); j++)
+    int[] rowSum = new int[array2D.GetLength(0)];
+    int sumInRow = 0; 
+
+    for(int i = 0; i < array2D.GetLength(0); i++)
     {
-        sumInRow += array2D[i,j];
+        for(int j = 0; j < array2D.GetLength(1); j++)
+        {
+            sumInRow += array2D[i,j];
+        }
+        rowSum[i] = sumInRow;
+        sumInRow = 0;
     }
-    rowSum[i] = sumInRow;
-    sumInRow = 0;
+    return rowSum;
 }
 
-int min = rowSum[0];
-int indexMin = 0;
-
-for(int i = 0; i < rowSum.Length; i++)
+int getMinSum(int[] array)
 {
-    if(rowSum[i] < min)
+    int min = array[0];
+    int indexMin = 0;
+
+    for(int i = 0; i < array.Length; i++)
     {
-        min = rowSum[i];
-        indexMin = i;
-    } 
+        if(array[i] < min)
+        {
+            min = array[i];
+            indexMin = i;
+        } 
+    }
+    
+    return indexMin;
 }
-int line = indexMin + 1;
-Console.WriteLine("Наименьшая сумма элементов находится в строке номер " + line + " и равна " + rowSum[indexMin]);
-
-
 
 
 
