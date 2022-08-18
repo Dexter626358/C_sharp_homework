@@ -8,35 +8,36 @@
 
 int[,] array2D = new int[4, 4];
 int count = 1;
+int len = array2D.GetLength(0);
 
-for(int i = 0; i < array2D.GetLength(0); i++)
+for(int col = 0; col < len; col++)  // первая строка
 {
-    array2D[0, i] = count;
+    array2D[0, col] = count;
     count++;
 }
-for(int j = 1; j < array2D.GetLength(1); j++)
+for(int row = 1; row < len; row++) // последний столбец
 {
-    array2D[j, array2D.GetLength(1) - 1] = count;
+    array2D[row, len - 1] = count;
     count++;
 }
-for(int i = 0; i < array2D.GetLength(0); i++)
+for(int col = 1; col < len; col++) // последняя строка
 {
-    array2D[array2D.GetLength(0) - 1, array2D.GetLength(0) - 1 - i] = count;
+    array2D[len - 1, len - 1 - col] = count;
     count++;
 }
-for(int j = 1; j < array2D.GetLength(0) - 1; j++)
+for(int row = 1; row < len - 1; row++) // первый столбец
 {
-    array2D[array2D.GetLength(0) - 1 - j, 0] = count;
+    array2D[len - 1 - row, 0] = count;
     count++;
 }
-for(int i = 1; i < array2D.GetLength(0) - 1; i++)
+for(int col = 1; col < len - 1; col++) // вторая строка
 {
-    array2D[1, i] = count;
+    array2D[1, col] = count;
     count++;
 }
-for(int j = 0; j < array2D.GetLength(1) - 2; j++)
+for(int row = 0; row < len - 2; row++) // предроследний столбец
 {
-    array2D[2, array2D.GetLength(0) - 2 - j] = count;
+    array2D[2, len - 2 - row] = count;
     count++;
 }
 
