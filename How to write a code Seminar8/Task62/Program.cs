@@ -6,7 +6,7 @@
 10 9 8 7*/
 
 
-int[,] array2D = new int[4, 4];
+int[,] array2D = new int[6, 6];
 int count = 1;
 int len = array2D.GetLength(0);
 
@@ -30,15 +30,46 @@ for(int row = 1; row < len - 1; row++) // первый столбец
     array2D[len - 1 - row, 0] = count;
     count++;
 }
-for(int col = 1; col < len - 1; col++) // вторая строка
+
+
+int c = 1;
+int d = 1;
+while(count < len * len)
 {
-    array2D[1, col] = count;
-    count++;
-}
-for(int row = 0; row < len - 2; row++) // предроследний столбец
-{
-    array2D[2, len - 2 - row] = count;
-    count++;
+    //Движемся вправо.
+    while (array2D[c, d + 1] == 0) {
+        array2D[c, d] = count;
+        count++;
+        d++;
+    }
+
+    //Движемся вниз.
+    while (array2D[c + 1, d] == 0) {
+        array2D[c, d] = count;
+        count++;
+        c++;
+    }
+
+    //Движемся влево.
+    while (array2D[c, d - 1] == 0) {
+        array2D[c, d] = count;
+        count++;
+        d--;
+    }
+
+    //Движемся вверх.
+    while (array2D[c - 1, d] == 0) {
+        array2D[c, d] = count;
+        count++;
+        c--;
+    }
+    for (int x = 0; x < len; x++) {
+            for (int y = 0; y < len; y++) {
+                if (array2D[x, y] == 0) {
+                    array2D[x, y] = count;
+                }
+            }
+        }
 }
 
 print2DArray(array2D);
