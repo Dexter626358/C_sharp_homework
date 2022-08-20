@@ -9,10 +9,11 @@ Console.WriteLine(SumNaturalElements(4, 8));
 int SumNaturalElements(int start, int end)
 {
     
-    if(start == end)
-    {
+    if(start == 0 && end == 0){
+        return 0;
+    }else if(start == end){
         return start;
-    }
+    }    
      
     return start + SumNaturalElements(++start, end);
 }
